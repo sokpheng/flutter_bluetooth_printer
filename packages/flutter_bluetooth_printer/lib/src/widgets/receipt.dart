@@ -30,6 +30,7 @@ class ReceiptController with ChangeNotifier {
 
   Future<void> print({
     required String address,
+    required CapabilityProfile profile,
     ProgressCallback? onProgress,
 
     /// add lines after print
@@ -43,6 +44,7 @@ class ReceiptController with ChangeNotifier {
       addFeeds: linesAfter,
       useImageRaster: useImageRaster,
       keepConnected: keepConnected,
+      profile: profile,
     );
   }
 }
@@ -149,6 +151,7 @@ class ReceiptState extends State<Receipt> {
     int addFeeds = 0,
     bool useImageRaster = false,
     bool keepConnected = false,
+    required CapabilityProfile profile,
   }) async {
     int quality = 4;
     final RenderRepaintBoundary boundary =
@@ -167,6 +170,7 @@ class ReceiptState extends State<Receipt> {
       addFeeds: addFeeds,
       useImageRaster: useImageRaster,
       keepConnected: keepConnected,
+      profile: profile,
     );
   }
 }

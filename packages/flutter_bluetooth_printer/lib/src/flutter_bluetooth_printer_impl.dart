@@ -50,6 +50,7 @@ class FlutterBluetoothPrinter {
     required List<int> imageBytes,
     required int imageWidth,
     required int imageHeight,
+    required CapabilityProfile profile,
     PaperSize paperSize = PaperSize.mm58,
     ProgressCallback? onProgress,
     int addFeeds = 0,
@@ -62,10 +63,8 @@ class FlutterBluetoothPrinter {
       srcWidth: imageWidth,
       srcHeight: imageHeight,
     );
-
     img.Image src = img.decodeJpg(bytes)!;
 
-    final profile = await CapabilityProfile.load();
     final generator = Generator(
       paperSize,
       profile,
