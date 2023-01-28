@@ -22,20 +22,9 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 31
 
     defaultConfig {
         minSdkVersion 21
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    lintOptions {
-        disable 'InvalidPackage'
-    }
-}
-
-dependencies {
-    compile files('libs/gprintersdkv2.jar')
-    implementation files('libs/gprintersdkv2.jar')
-    implementation "androidx.core:core:1.7.0"
-   // implementation files("C:\\WorkSpace\\SDK\\flutter\\bin\\cache\\artifacts\\engine\\android-x64\\flutter.jar")
 }
